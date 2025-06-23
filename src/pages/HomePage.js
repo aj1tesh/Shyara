@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import AnimatedBackground from '../components/AnimatedBackground';
 
 const LINE1 = 'Creative Digital Solutions';
 const LINE2 = 'for Growing Brands.';
@@ -49,7 +48,7 @@ const HomePage = () => {
 
   return (
     <div className="relative">
-      <AnimatedBackground />
+      {/* <AnimatedBackground /> Removed to prevent double rendering */}
       <div className="relative z-10 container mx-auto">
         {/* Hero Section */}
         <section className="text-center pt-16 pb-8 sm:pt-20 sm:pb-10 px-4">

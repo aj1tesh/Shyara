@@ -60,7 +60,7 @@ const ContactPage = () => {
             </div>
             <div>
               <h3 className="text-lg font-semibold text-text-primary">Email</h3>
-              <a href="mailto:contact@shyara.com" className="text-text-secondary hover:text-primary transition-colors">boom@baam.com</a>
+              <a href="mailto:contact@shyara.com" className="text-text-secondary hover:text-primary transition-colors">contact@shyara.com</a>
             </div>
           </div>
           <div className="flex items-start space-x-4">
@@ -78,7 +78,7 @@ const ContactPage = () => {
             </div>
             <div>
               <h3 className="text-lg font-semibold text-text-primary">Address</h3>
-              <p className="text-text-secondary">Shaitan Gali, Khatra Mahal</p>
+              <p className="text-text-secondary">123 Freelancer Lane, City, State, India</p>
             </div>
           </div>
         </div>
