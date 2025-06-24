@@ -102,7 +102,6 @@ const AboutPage = () => {
               muted
               loop
               playsInline
-              controls={false}
             />
           </div>
         </div>
