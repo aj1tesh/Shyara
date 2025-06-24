@@ -24,6 +24,11 @@ jobs:
       - name: Build the app
         run: npm run build
 
+      - name: Configure Git identity
+        run: |
+          git config user.name "Ajitesh Singh"
+          git config user.email "singh.ajitesh1449@gmail.com"
+
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
