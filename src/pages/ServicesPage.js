@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Share2, Sparkles, Megaphone, Globe, Smartphone, Film } from 'lucide-react';
+import ThreeDBackground from '../components/ThreeDBackground';
+import FancyText from '../components/FancyText';
 
 const services = [
   {
@@ -54,7 +56,9 @@ const ServiceCard = ({ service }) => {
       onBlur={() => setHovered(false)}
     >
       <div className="mb-4">{service.icon}</div>
-      <h3 className="text-xl font-bold mb-3 text-text-primary">{service.title}</h3>
+      <h3 className="text-xl font-bold mb-3 text-text-primary">
+        <FancyText text={service.title} />
+      </h3>
       <p className="text-text-secondary mb-4 flex-grow">{service.desc}</p>
       <p className="font-semibold text-primary text-lg">{service.price}</p>
       {/* Subtle overlay on hover */}
@@ -95,7 +99,7 @@ const ServicesHeading = () => {
 
   return (
     <h1 className="text-4xl font-bold text-text-primary mb-4 min-h-[2.5em]">
-      {displayed}
+      <FancyText text={displayed} />
       <span className="inline-block w-2 h-6 align-middle bg-text-primary animate-pulse ml-1" aria-hidden="true" style={{verticalAlign:'-0.2em'}}></span>
       <span className="sr-only">Our Services</span>
     </h1>
@@ -104,17 +108,20 @@ const ServicesHeading = () => {
 
 const ServicesPage = () => {
   return (
-    <div className="container mx-auto py-16 px-4">
-      <div className="text-center max-w-3xl mx-auto">
-        <ServicesHeading />
-        <p className="text-lg text-text-secondary mb-12">
-          Smart, scalable, and freelancer-powered digital solutions for every brand. Choose what you need.
-        </p>
-      </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {services.map((service) => (
-          <ServiceCard key={service.title} service={service} />
-        ))}
+    <div className="relative">
+      <ThreeDBackground />
+      <div className="container mx-auto py-16 px-4 relative z-10">
+        <div className="text-center max-w-3xl mx-auto">
+          <ServicesHeading />
+          <p className="text-lg text-text-secondary mb-12">
+            Smart, scalable, and freelancer-powered digital solutions for every brand. Choose what you need.
+          </p>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service) => (
+            <ServiceCard key={service.title} service={service} />
+          ))}
+        </div>
       </div>
     </div>
   );

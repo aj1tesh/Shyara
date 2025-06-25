@@ -7,7 +7,8 @@ import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
 import PortfolioPage from './pages/PortfolioPage';
 import ContactPage from './pages/ContactPage';
-import AnimatedBackground from './components/AnimatedBackground';
+import ThreeDBackground from './components/ThreeDBackground';
+import CustomCursor from './components/CustomCursor';
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -21,7 +22,8 @@ function App() {
   return (
     <Router>
       <div className="bg-background text-text-secondary min-h-screen font-sans relative">
-        <AnimatedBackground />
+        <ThreeDBackground />
+        <CustomCursor />
         <header className="sticky top-0 z-50 bg-surface/80 backdrop-blur-sm border-b border-surface">
           <nav className="container mx-auto flex items-center justify-between py-4 px-6 relative">
             <NavLink to="/" className="text-3xl font-bold text-text-primary" onClick={closeMenu}>Shyara</NavLink>
@@ -31,7 +33,7 @@ function App() {
               <li><NavLink to="/about" style={({ isActive }) => isActive ? activeLinkStyle : undefined} className="hover:text-text-primary transition-colors">About</NavLink></li>
               <li><NavLink to="/services" style={({ isActive }) => isActive ? activeLinkStyle : undefined} className="hover:text-text-primary transition-colors">Services</NavLink></li>
               <li><NavLink to="/portfolio" style={({ isActive }) => isActive ? activeLinkStyle : undefined} className="hover:text-text-primary transition-colors">Portfolio</NavLink></li>
-              <li><NavLink to="/contact" className="bg-primary text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition-colors">Contact Us</NavLink></li>
+              <li><NavLink to="/contact" className="btn btn-purple-hover">Contact Us</NavLink></li>
             </ul>
             {/* Mobile Hamburger */}
             <button
@@ -49,7 +51,7 @@ function App() {
                   <li><NavLink to="/about" onClick={closeMenu} style={({ isActive }) => isActive ? activeLinkStyle : undefined} className="hover:text-primary transition-colors block pb-2 border-b border-surface">About</NavLink></li>
                   <li><NavLink to="/services" onClick={closeMenu} style={({ isActive }) => isActive ? activeLinkStyle : undefined} className="hover:text-primary transition-colors block pb-2 border-b border-surface">Services</NavLink></li>
                   <li><NavLink to="/portfolio" onClick={closeMenu} style={({ isActive }) => isActive ? activeLinkStyle : undefined} className="hover:text-primary transition-colors block pb-2 border-b border-surface">Portfolio</NavLink></li>
-                  <li><NavLink to="/contact" onClick={closeMenu} className="bg-primary text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors block mt-2">Contact Us</NavLink></li>
+                  <li><NavLink to="/contact" onClick={closeMenu} className="btn btn-purple-hover block mt-2">Contact Us</NavLink></li>
                 </ul>
               </div>
             )}

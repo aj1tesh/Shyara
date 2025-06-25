@@ -6,11 +6,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#2563EB',      // blue-600
-        background: '#0D1117',   // Rich Black
-        surface: '#161B22',      // Dark Charcoal
-        'text-primary': '#E6EDF3', // Light Gray
-        'text-secondary': '#8B949E', // Medium Gray
+        primary: '#A259F7',      // Vibrant Purple
+        secondary: '#6D28D9',    // Deep Purple
+        accent: '#C084FC',       // Light Purple
+        background: '#09090B',   // True Black
+        surface: '#18181B',      // Near Black
+        'text-primary': '#F4F4F5', // Off-white
+        'text-secondary': '#D1D5DB', // Brighter Gray for body text
+        'purple-glow': '#B983FF', // Neon Purple for 3D effects
       },
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui'],

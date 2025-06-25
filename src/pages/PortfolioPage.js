@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
+import ThreeDBackground from '../components/ThreeDBackground';
+import FancyText from '../components/FancyText';
 
 const portfolioItems = [
   {
@@ -55,8 +57,8 @@ const PortfolioCard = ({ item }) => {
   const [hovered, setHovered] = useState(false);
   return (
     <div
-      className={`bg-surface rounded-xl shadow-lg overflow-hidden border border-transparent transition-all duration-300 relative group cursor-pointer mb-8
-        ${hovered ? 'scale-[1.025] -translate-y-1 bg-surface/95' : ''}
+      className={`bg-surface/90 rounded-2xl shadow-xl overflow-hidden border-2 border-surface transition-all duration-300 relative group cursor-pointer mb-8
+        ${hovered ? 'scale-[1.03] -translate-y-1 border-purple-glow shadow-2xl' : ''}
       `}
       tabIndex={0}
       onMouseEnter={() => setHovered(true)}
@@ -64,17 +66,21 @@ const PortfolioCard = ({ item }) => {
       onFocus={() => setHovered(true)}
       onBlur={() => setHovered(false)}
     >
-      <div className="h-56 w-full overflow-hidden flex items-center justify-center bg-black">
+      <div className={`absolute left-0 top-0 h-full w-1.5 bg-gradient-to-b from-primary to-purple-glow transition-all duration-300 ${hovered ? 'opacity-100' : 'opacity-60'}`}></div>
+      <div className="h-56 w-full overflow-hidden flex items-center justify-center bg-black relative">
         <img
           src={item.img}
           alt={item.title}
           className={`object-cover w-full h-full transition-all duration-500 ease-in-out ${hovered ? 'scale-105 grayscale-0' : 'scale-100 grayscale'} `}
           style={{ aspectRatio: '16/9' }}
         />
+        <div className={`absolute inset-0 bg-black/25 transition-all duration-500 ${hovered ? 'bg-black/10' : ''}`}></div>
       </div>
-      <div className="p-6">
-        <p className="text-sm text-text-secondary mb-1">{item.category}</p>
-        <h3 className="text-xl font-bold text-text-primary mb-2">{item.title}</h3>
+      <div className="p-7">
+        <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-1">{item.category}</p>
+        <h3 className="text-xl font-bold text-text-primary mb-2">
+          <FancyText text={item.title} />
+        </h3>
         <div
           className={`transition-all duration-300 ease-in-out overflow-hidden ${hovered ? 'max-h-96 opacity-100 mt-2' : 'max-h-0 opacity-0 mt-0'}`}
         >
@@ -83,7 +89,7 @@ const PortfolioCard = ({ item }) => {
           <p className="text-text-secondary text-sm"><span className="font-semibold text-text-primary">Services:</span> {item.services}</p>
         </div>
       </div>
-      <div className={`absolute inset-0 pointer-events-none transition-all duration-300 ${hovered ? 'bg-white/5' : ''}`}></div>
+      <div className={`absolute inset-0 pointer-events-none transition-all duration-300 ${hovered ? 'shadow-[0_0_32px_8px_#A259F7aa]' : ''}`}></div>
     </div>
   );
 };
@@ -121,7 +127,7 @@ const PortfolioHeading = () => {
 
   return (
     <h1 className="text-4xl font-bold text-text-primary mb-4 min-h-[2.5em]">
-      {displayed}
+      <FancyText text={displayed} />
       <span className="inline-block w-2 h-6 align-middle bg-text-primary animate-pulse ml-1" aria-hidden="true" style={{verticalAlign:'-0.2em'}}></span>
       <span className="sr-only">Our Work</span>
     </h1>
@@ -160,14 +166,14 @@ const AnimatedCTA = () => {
       return;
     }
     let i = 0;
-    const speed = 55;
+    const speed = 25;
     const typeLine1 = () => {
       if (i <= CTA_LINE1.length) {
         setDisplayed1(CTA_LINE1.slice(0, i));
         i++;
         setTimeout(typeLine1, speed);
       } else {
-        setTimeout(() => setShowPara(true), 700);
+        setTimeout(() => setShowPara(true), 400);
       }
     };
     typeLine1();
@@ -177,7 +183,7 @@ const AnimatedCTA = () => {
   return (
     <div ref={ref} className={`transition-opacity duration-700 ${hasPortfolioCTAAnimated ? 'opacity-100' : visible ? 'opacity-100' : 'opacity-0'} mt-24 mb-8 flex flex-col items-center`}>
       <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-text-primary text-center mb-2 min-h-[2.5em]">
-        {displayed1}
+        <FancyText text={displayed1} />
         <span className="inline-block w-2 h-6 align-middle bg-text-primary animate-pulse ml-1" aria-hidden="true" style={{verticalAlign:'-0.2em'}}></span>
         <span className="sr-only">Ready to Join Our Growing List of Success Stories?</span>
       </h2>
@@ -190,19 +196,22 @@ const AnimatedCTA = () => {
 
 const PortfolioPage = () => {
   return (
-    <div className="container mx-auto py-16 px-4">
-      <div className="text-center max-w-3xl mx-auto">
-        <PortfolioHeading />
-        <p className="text-lg text-text-secondary mb-12">
-          We're proud of what we create. Our work speaks for itself.
-        </p>
+    <div className="relative">
+      <ThreeDBackground />
+      <div className="container mx-auto py-16 px-4 relative z-10">
+        <div className="text-center max-w-3xl mx-auto">
+          <PortfolioHeading />
+          <p className="text-lg text-text-secondary mb-12">
+            We're proud of what we create. Our work speaks for itself.
+          </p>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" style={{ gridAutoRows: 'min-content' }}>
+          {portfolioItems.map((item) => (
+            <PortfolioCard key={item.title} item={item} />
+          ))}
+        </div>
+        <AnimatedCTA />
       </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" style={{ gridAutoRows: 'min-content' }}>
-        {portfolioItems.map((item) => (
-          <PortfolioCard key={item.title} item={item} />
-        ))}
-      </div>
-      <AnimatedCTA />
     </div>
   );
 };

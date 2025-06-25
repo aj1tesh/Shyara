@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import AnimatedBackground from '../components/AnimatedBackground';
+import ThreeDBackground from '../components/ThreeDBackground';
+import FancyText from '../components/FancyText';
 
 const LINE1 = 'Creative Digital Solutions';
 const LINE2 = 'for Growing Brands.';
@@ -49,14 +50,14 @@ const HomePage = () => {
 
   return (
     <div className="relative">
-      <AnimatedBackground />
+      <ThreeDBackground />
       <div className="relative z-10 container mx-auto">
         {/* Hero Section */}
         <section className="text-center pt-16 pb-8 sm:pt-20 sm:pb-10 px-4">
           <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold text-text-primary mb-3 sm:mb-4 leading-tight px-2 sm:px-0 min-h-[3.5em]">
-            {displayed1}
+            <FancyText text={displayed1} />
             <br />
-            {displayed2}
+            <FancyText text={displayed2} />
             <span className="inline-block w-2 h-6 align-middle bg-text-primary animate-pulse ml-1" aria-hidden="true" style={{verticalAlign:'-0.2em'}}></span>
             <span className="sr-only">Creative Digital Solutions for Growing Brands.</span>
           </h1>
@@ -64,10 +65,10 @@ const HomePage = () => {
             We combine data-driven strategy with creative storytelling to help your business stand out in a crowded digital world.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-            <Link to="/services" className="px-6 py-2 sm:px-8 sm:py-3 bg-primary text-white rounded-lg font-semibold shadow-lg hover:bg-blue-700 transition-colors transform hover:scale-105">
+            <Link to="/services" className="btn btn-purple-hover">
               Our Services
             </Link>
-            <Link to="/portfolio" className="px-6 py-2 sm:px-8 sm:py-3 bg-surface text-text-primary rounded-lg font-semibold shadow-lg hover:bg-gray-700 transition-colors transform hover:scale-105">
+            <Link to="/portfolio" className="btn btn-surface">
               View Our Work
             </Link>
           </div>
@@ -76,8 +77,10 @@ const HomePage = () => {
         {/* Testimonials */}
         <section className="py-3 sm:py-">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-6 sm:mb-8">Loved by Our Clients</h2>
-            <div className="bg-surface p-6 sm:p-8 rounded-xl shadow-lg relative">
+            <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-6 sm:mb-8">
+              <FancyText text="Loved by Our Clients" />
+            </h2>
+            <div className="bg-surface/60 backdrop-blur-md p-6 sm:p-8 rounded-xl shadow-lg relative">
               <p className="text-base sm:text-lg italic text-text-secondary">
                 "Shyara has been the perfect partner for my business. Their social media marketing service helped us go from 0 to 5K followers with genuine engagement."
               </p>

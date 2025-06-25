@@ -1,3 +1,34 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities; 
+@tailwind utilities;
+
+body, a, button, input, textarea, select, [role="button"], .btn, [tabindex], *:hover, *:active, *:focus {
+  cursor: none !important;
+}
+
+.fancy-letter:hover {
+  color: #A259F7;
+  text-shadow: 0 0 8px #A259F7, 0 0 16px #B983FF;
+  transform: scale(1.25) translateY(-2px) rotate(-3deg);
+  z-index: 1;
+}
+
+.btn {
+  @apply px-6 py-2 sm:px-8 sm:py-3 rounded-lg font-semibold shadow-lg transition-colors duration-200;
+}
+.btn-purple-hover {
+  @apply bg-primary text-white;
+}
+.btn-purple-hover:hover, .btn-purple-hover:focus {
+  background-color: #6D28D9 !important; /* secondary purple */
+  box-shadow: 0 0 16px 2px #6D28D9aa;
+  color: #fff;
+}
+.btn-surface {
+  @apply bg-surface text-text-primary;
+}
+.btn-surface:hover, .btn-surface:focus {
+  background-color: #18181B !important;
+  box-shadow: 0 0 12px 2px #6D28D955;
+  color: #fff;
+} 
