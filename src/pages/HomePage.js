@@ -61,7 +61,7 @@ const HomePage = () => {
             <span className="inline-block w-2 h-6 align-middle bg-text-primary animate-pulse ml-1" aria-hidden="true" style={{verticalAlign:'-0.2em'}}></span>
             <span className="sr-only">Creative Digital Solutions for Growing Brands.</span>
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-text-secondary mb-3 sm:mb-6 max-w-3xl mx-auto">
+          <p className="text-xl sm:text-2xl md:text-3xl font-semibold text-text-primary drop-shadow-lg mb-3 sm:mb-6 max-w-5xl mx-auto px-0">
             We combine data-driven strategy with creative storytelling to help your business stand out in a crowded digital world.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">

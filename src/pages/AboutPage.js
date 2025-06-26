@@ -84,7 +84,7 @@ const AboutPage = () => {
       <div className="container mx-auto py-16 px-4 relative z-10">
         <div className="max-w-4xl mx-auto">
           <AboutHeading />
-          <p className="text-lg text-center text-text-secondary mb-12">
+          <p className="text-xl sm:text-2xl md:text-3xl font-semibold text-text-primary drop-shadow-lg text-center max-w-5xl mx-auto px-0 mb-12">
             We're a freelance-powered digital collective, here to empower your brand online.
           </p>
 
@@ -118,7 +118,7 @@ const AboutPage = () => {
             <h2 className="text-2xl font-bold mb-3 text-text-primary">
               <FancyText text="Our Vision" />
             </h2>
-            <p className="text-text-secondary max-w-2xl mx-auto">
+            <p className="text-xl sm:text-2xl md:text-3xl font-semibold text-text-primary drop-shadow-lg max-w-5xl mx-auto px-0">
               To become India's most trusted freelance-powered digital collective, enabling brands to scale online without the overhead of traditional agencies.
             </p>
           </div>

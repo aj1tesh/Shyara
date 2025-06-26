@@ -113,7 +113,7 @@ const ServicesPage = () => {
       <div className="container mx-auto py-16 px-4 relative z-10">
         <div className="text-center max-w-3xl mx-auto">
           <ServicesHeading />
-          <p className="text-lg text-text-secondary mb-12">
+          <p className="text-xl sm:text-2xl md:text-3xl font-semibold text-text-primary drop-shadow-lg mb-12 max-w-5xl mx-auto px-0">
             Smart, scalable, and freelancer-powered digital solutions for every brand. Choose what you need.
           </p>
         </div>

@@ -49,7 +49,7 @@ const ContactPage = () => {
       <div className="container mx-auto py-16 px-4 relative z-10">
         <div className="text-center max-w-3xl mx-auto">
           <ContactHeading />
-          <p className="text-lg text-text-secondary mb-12">
+          <p className="text-xl sm:text-2xl md:text-3xl font-semibold text-text-primary drop-shadow-lg mb-12 max-w-5xl mx-auto px-0">
             Have a project in mind? We'd love to hear from you.
           </p>
         </div>

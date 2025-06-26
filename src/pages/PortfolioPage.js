@@ -187,7 +187,7 @@ const AnimatedCTA = () => {
         <span className="inline-block w-2 h-6 align-middle bg-text-primary animate-pulse ml-1" aria-hidden="true" style={{verticalAlign:'-0.2em'}}></span>
         <span className="sr-only">Ready to Join Our Growing List of Success Stories?</span>
       </h2>
-      <p className={`text-lg sm:text-xl text-text-secondary text-center max-w-2xl min-h-[2.5em] transition-opacity duration-700 ${showPara ? 'opacity-100' : 'opacity-0'}`}>
+      <p className={`text-xl sm:text-2xl md:text-3xl font-semibold text-text-primary drop-shadow-lg text-center max-w-5xl min-h-[2.5em] transition-opacity duration-700 ${showPara ? 'opacity-100' : 'opacity-0'} mx-auto px-0`}>
         {CTA_LINE2}
       </p>
     </div>
@@ -201,7 +201,7 @@ const PortfolioPage = () => {
       <div className="container mx-auto py-16 px-4 relative z-10">
         <div className="text-center max-w-3xl mx-auto">
           <PortfolioHeading />
-          <p className="text-lg text-text-secondary mb-12">
+          <p className="text-xl sm:text-2xl md:text-3xl font-semibold text-text-primary drop-shadow-lg mb-12 max-w-5xl mx-auto px-0">
             We're proud of what we create. Our work speaks for itself.
           </p>
         </div>
