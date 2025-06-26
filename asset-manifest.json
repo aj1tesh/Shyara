@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Shyara/static/css/main.36803eb7.css",
-    "main.js": "/Shyara/static/js/main.6603a5f2.js",
+    "main.css": "/Shyara/static/css/main.c208d51c.css",
+    "main.js": "/Shyara/static/js/main.1185e90e.js",
     "static/media/videoplayback.mp4": "/Shyara/static/media/videoplayback.5ec73d1365dcace17e34.mp4",
     "static/media/influencer.png": "/Shyara/static/media/influencer.e15437736786d9b076c1.png",
     "static/media/Screenshot 2025-06-23 003115.png": "/Shyara/static/media/Screenshot 2025-06-23 003115.230ed189224d46d17610.png",
@@ -10,11 +10,11 @@
     "static/media/event.jpeg": "/Shyara/static/media/event.e011a93f847ca6a353a9.jpeg",
     "static/media/fit.jpg": "/Shyara/static/media/fit.578bc36fe2ac06eb97e4.jpg",
     "index.html": "/Shyara/index.html",
-    "main.36803eb7.css.map": "/Shyara/static/css/main.36803eb7.css.map",
-    "main.6603a5f2.js.map": "/Shyara/static/js/main.6603a5f2.js.map"
+    "main.c208d51c.css.map": "/Shyara/static/css/main.c208d51c.css.map",
+    "main.1185e90e.js.map": "/Shyara/static/js/main.1185e90e.js.map"
   },
   "entrypoints": [
-    "static/css/main.36803eb7.css",
-    "static/js/main.6603a5f2.js"
+    "static/css/main.c208d51c.css",
+    "static/js/main.1185e90e.js"
   ]
 }
