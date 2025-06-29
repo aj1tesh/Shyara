@@ -34,4 +34,8 @@ body, a, button, input, textarea, select, [role="button"], .btn, [tabindex], *:h
   background-color: #18181B !important;
   box-shadow: 0 0 12px 2px #6D28D955;
   color: #fff;
-} 
+}
+
+.fade-page-transition { transition: opacity 0.4s; }
+.fade-page-transition > * { opacity: 1; transition: opacity 0.4s; }
+html, body { overflow-x: hidden; } 

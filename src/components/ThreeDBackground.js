@@ -4,10 +4,11 @@ import { Canvas, useFrame } from '@react-three/fiber';
 // Starfield parameters
 const STAR_COUNT = 600;
 const STAR_COLORS = [
-  'rgba(244,244,245,0.10)', // off-white, very dim
-  'rgba(162,89,247,0.10)',  // purple, very dim
-  'rgba(185,131,255,0.08)', // light purple, very dim
-  'rgba(192,132,252,0.07)'  // accent, very dim
+  'rgba(255,255,255,0.7)',    // bright white
+  'rgba(244,244,245,0.35)',  // off-white, more visible
+  'rgba(162,89,247,0.25)',   // purple, more visible
+  'rgba(185,131,255,0.22)',  // light purple, more visible
+  'rgba(192,132,252,0.18)'   // accent, more visible
 ];
 
 function Stars() {
@@ -87,8 +88,8 @@ const ThreeDBackground = () => (
       left: 0,
       width: '100vw',
       height: '100vh',
-      zIndex: 0,
-      pointerEvents: 'auto',
+      zIndex: -1,
+      pointerEvents: 'none',
       background: 'linear-gradient(120deg, #09090B 60%, #18181B 100%)',
     }}
   >
