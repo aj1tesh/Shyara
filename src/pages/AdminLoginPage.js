@@ -11,7 +11,7 @@ const AdminLoginPage = () => {
     e.preventDefault();
     setError("");
     try {
-      const res = await fetch('http://localhost:5000/auth/admin-login', {
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/auth/admin-login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ password })
