@@ -1,7 +1,6 @@
 {
   "name": "shyara-digital-agency-website",
   "version": "1.0.0",
-  "homepage": "https://aj1tesh.github.io/Shyara",
   "private": true,
   "description": "A modern, professional, and fully responsive website for Shyara Digital Agency.",
   "scripts": {
