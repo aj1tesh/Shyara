@@ -52,8 +52,8 @@ const CustomCursor = () => {
   useEffect(() => {
     let frame;
     const animate = () => {
-      pos.current.x += (mouse.current.x - pos.current.x) * 0.22;
-      pos.current.y += (mouse.current.y - pos.current.y) * 0.22;
+      pos.current.x += (mouse.current.x - pos.current.x) * 0.5;
+      pos.current.y += (mouse.current.y - pos.current.y) * 0.5;
       if (cursorRef.current) {
         cursorRef.current.style.transform = `translate3d(${pos.current.x - CURSOR_SIZE / 2}px, ${pos.current.y - CURSOR_SIZE / 2}px, 0)`;
       }
