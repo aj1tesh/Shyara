@@ -3,12 +3,24 @@ import { useNavigate } from 'react-router-dom';
 import { CartContext } from '../CartContext';
 import ThreeDBackground from '../components/ThreeDBackground';
 import FancyText from '../components/FancyText';
-import { Megaphone, ListChecks, BadgePercent, Star, MessageCircle, Rocket } from 'lucide-react';
+import { Megaphone, ListChecks, BadgePercent, Star, MessageCircle, Rocket, ArrowLeft } from 'lucide-react';
 
 const Divider = () => (
   <div className="w-full flex justify-center my-8">
     <div className="h-1 w-2/3 bg-gradient-to-r from-primary via-purple-400 to-primary rounded-full animate-pulse shadow-lg" style={{minWidth:'200px'}}></div>
   </div>
+);
+
+const StickyGoBack = ({ onClick }) => (
+  <button
+    onClick={onClick}
+    className="fixed top-24 left-8 z-50 btn btn-surface px-4 py-2 rounded-full flex items-center gap-2 shadow border border-primary/30 backdrop-blur-md hover:bg-primary/10 transition-all animate-fade-in"
+    style={{boxShadow:'0 2px 16px 0 rgba(80,80,120,0.10)', opacity:0.97}}
+    aria-label="Go Back"
+  >
+    <ArrowLeft className="w-5 h-5 text-primary" />
+    <span>Go Back</span>
+  </button>
 );
 
 const AdsCampaignManagementPage = () => {
@@ -19,9 +31,9 @@ const AdsCampaignManagementPage = () => {
   return (
     <div className="relative min-h-screen">
       <ThreeDBackground />
+      <StickyGoBack onClick={() => navigate('/services')} />
       <div className="container mx-auto py-16 px-4 relative z-10 flex justify-center items-start min-h-screen">
         <div className="bg-surface/70 backdrop-blur-md rounded-3xl shadow-2xl border border-surface max-w-5xl w-full p-8 sm:p-16 animate-fade-in">
-          <button onClick={() => navigate('/services')} className="btn btn-surface mb-8">&larr; Go Back</button>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary mb-6 flex items-center gap-3">
             <Megaphone className="w-8 h-8 text-primary drop-shadow" />
             <FancyText text="Ads Campaign Management" />
@@ -36,7 +48,7 @@ const AdsCampaignManagementPage = () => {
               <ListChecks className="w-6 h-6 text-primary" /> What We Provide
             </h2>
             <ul className="pl-4 border-l-4 border-primary/60 space-y-4">
-              <li className="flex items-start gap-3 bg-surface/80 rounded-xl shadow p-4"><b>Free Ad Image Design:</b> Professionally designed images tailored to your brand and campaign goals.</li>
+              <li className="flex items-start gap-3 bg-surface/80 rounded-xl shadow p-4"><b>Ad Image Design:</b> Professionally designed images tailored to your brand and campaign goals.</li>
               <li className="flex items-start gap-3 bg-surface/80 rounded-xl shadow p-4"><b>Ad Video Editing:</b> For ₹2,000 per video, we edit raw footage you provide into high-impact ads. (100% advance payment required)</li>
               <li className="flex items-start gap-3 bg-surface/80 rounded-xl shadow p-4"><b>Complete Ad Management:</b> We handle your ad budget, targeting, optimization, and reporting across platforms like Facebook, Instagram, Google Ads, and more.</li>
               <li className="flex items-start gap-3 bg-surface/80 rounded-xl shadow p-4"><b>Transparent Pricing:</b> Advance payment for 1 month of ad budget, 15% service fee of the ad budget after 15 days, full payment of ad budget after campaign completion.</li>

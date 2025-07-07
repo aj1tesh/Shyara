@@ -23,6 +23,8 @@ import AdminLoginPage from './pages/AdminLoginPage';
 import AdminDashboardPage from './pages/AdminDashboardPage';
 import AdminDashboardStandalone from './pages/AdminDashboardStandalone';
 import ClientDashboardStandalone from './pages/ClientDashboardStandalone';
+import ClientLoginPage from './pages/ClientLoginPage';
+import ScrollToTop from './components/ScrollToTop';
 
 function StandaloneRoutes() {
   return (
@@ -47,15 +49,20 @@ function MainAppLayout({ children, cart, mobileMenuOpen, setMobileMenuOpen, clos
               <li><NavLink to="/services" style={({ isActive }) => isActive ? activeLinkStyle : undefined} className="hover:text-text-primary transition-colors">Services</NavLink></li>
               <li><NavLink to="/portfolio" style={({ isActive }) => isActive ? activeLinkStyle : undefined} className="hover:text-text-primary transition-colors">Portfolio</NavLink></li>
               <li><NavLink to="/contact" className="btn btn-purple-hover">Contact Us</NavLink></li>
-            {/* Cart Icon: always visible, badge only if cart has items */}
-            <li style={{width:'2.5rem', display:'flex', justifyContent:'center', alignItems:'center', position:'relative'}}>
-              <NavLink to="/cart" className="relative">
-                <ShoppingCart className="w-7 h-7 text-primary" />
-                {cart.length >= 1 && (
-                  <span className="absolute -top-2 -right-2 bg-primary text-white text-xs rounded-full px-2 py-0.5 font-bold">{cart.length}</span>
-                )}
-              </NavLink>
-            </li>
+              {/* Cart Icon: always visible, badge only if cart has items */}
+              <li style={{width:'2.5rem', display:'flex', justifyContent:'center', alignItems:'center', position:'relative'}}>
+                <NavLink to="/cart" className="relative">
+                  <ShoppingCart className="w-7 h-7 text-primary" />
+                  {cart.length >= 1 && (
+                    <span className="absolute -top-2 -right-2 bg-primary text-white text-xs rounded-full px-2 py-0.5 font-bold">{cart.length}</span>
+                  )}
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/client-login" className="btn btn-surface border border-primary/30 text-primary hover:bg-primary/10 transition flex items-center gap-2 shadow">
+                  Client Login
+                </NavLink>
+              </li>
             </ul>
             {/* Mobile Hamburger */}
             <button
@@ -74,6 +81,7 @@ function MainAppLayout({ children, cart, mobileMenuOpen, setMobileMenuOpen, clos
                   <li><NavLink to="/services" onClick={closeMenu} style={({ isActive }) => isActive ? activeLinkStyle : undefined} className="hover:text-primary transition-colors block pb-2 border-b border-surface">Services</NavLink></li>
                   <li><NavLink to="/portfolio" onClick={closeMenu} style={({ isActive }) => isActive ? activeLinkStyle : undefined} className="hover:text-primary transition-colors block pb-2 border-b border-surface">Portfolio</NavLink></li>
                   <li><NavLink to="/contact" onClick={closeMenu} className="btn btn-purple-hover block mt-2">Contact Us</NavLink></li>
+                  <li><NavLink to="/client-login" onClick={closeMenu} className="btn btn-surface border border-primary/30 text-primary hover:bg-primary/10 transition flex items-center gap-2 shadow w-full">Client Login</NavLink></li>
                 </ul>
               </div>
             )}
@@ -111,6 +119,7 @@ function App() {
     <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
       <CustomCursor />
       <Router>
+        <ScrollToTop />
         {isStandalone ? (
           <StandaloneRoutes />
         ) : (
@@ -131,6 +140,7 @@ function App() {
               <Route path="/cart" element={<CartPage />} />
               <Route path="/add-items" element={<AddItemsPage />} />
               <Route path="/client-dashboard" element={<ClientDashboardPage />} />
+              <Route path="/client-login" element={<ClientLoginPage />} />
               <Route path="/letmein" element={<AdminLoginPage />} />
               <Route path="/admin-dashboard" element={<AdminDashboardPage />} />
               <Route path="/admin-standalone" element={<AdminDashboardStandalone />} />

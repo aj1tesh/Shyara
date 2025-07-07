@@ -198,7 +198,7 @@ const PortfolioPage = () => {
   return (
     <div className="relative">
       <ThreeDBackground />
-      <div className="container mx-auto py-16 px-4 relative z-10">
+      <div className="container mx-auto py-16 px-4 sm:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto">
           <PortfolioHeading />
           <p className="text-xl sm:text-2xl md:text-3xl font-semibold text-text-primary drop-shadow-lg mb-12 max-w-5xl mx-auto px-0">
